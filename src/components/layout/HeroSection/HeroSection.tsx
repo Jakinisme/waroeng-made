@@ -2,6 +2,7 @@
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import heroImage from "../../../assets/sate.png"
+import motifImage from "../../../assets/motif.png"
 
 export interface HeroSectionProps {
   title: string
@@ -27,6 +28,11 @@ export default function HeroSection({
       role="banner"
     >
       <div className={styles.overlay} aria-hidden="true" />
+      <div
+        className={styles.motif}
+        aria-hidden="true"
+        style={{ backgroundImage: `url(${motifImage})` }}
+      />
       <div className={styles.inner}>
         <div className={styles.content}>
           <h1 id={headingId} className={styles.title}>
