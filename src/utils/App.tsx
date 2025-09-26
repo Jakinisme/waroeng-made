@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <Header />
-      <h1>Waroeng Made</h1>
       <Home />
     </div>
   )

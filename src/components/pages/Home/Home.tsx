@@ -1,10 +1,14 @@
-import Button from "../../ui/Button";
+
+import Hero from "../../layout/HeroSection";
 
 const Home = () => {
     return (
-        <div>
-            <Button>Hallo</Button>
-        </div>
+        <main>
+            <Hero 
+            title="Waroeng Made"
+            subtitle="Authentic Balinese Restaurant"
+            />
+        </main>
     )
 }
 
