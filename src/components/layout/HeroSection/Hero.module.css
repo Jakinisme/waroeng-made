@@ -4,12 +4,13 @@
   position: relative;
   display: block;
   width: 100%;
-  min-height: 70vh;
+  min-height: 100svh;
 
   /* Background image from inline style prop */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  background-color: rgb(14, 73, 18);
 
   /* Spacing: mobile-first; push content lower */
   padding: 10rem 1.25rem 5rem;
@@ -22,6 +23,10 @@
   position: absolute;
   inset: 0;
   background-color: rgb(14, 73, 18);
+  background: radial-gradient(circle at 20% 80%, rgba(15, 102, 21, 0.281) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(9, 68, 12, 0.288) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(9, 43, 12, 0.411) 0%, transparent 50%);
+    animation: backgroundShift 20s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -96,7 +101,7 @@
 @media (min-width: 768px) {
   .hero {
     padding: 14rem 2rem 6rem;
-    min-height: 75vh;
+    min-height: 100svh;
   }
 
   .ctaWrap {
@@ -110,6 +115,6 @@
 
 @media (min-width: 1200px) {
   .hero {
-    min-height: 80vh;
+    min-height: 100svh;
   }
 }

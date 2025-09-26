@@ -1,7 +1,6 @@
 "use client"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
-import heroImage from "../../../assets/sate.png"
 import motifImage from "../../../assets/motif.png"
 
 export interface HeroSectionProps {
@@ -14,7 +13,6 @@ export interface HeroSectionProps {
 export default function HeroSection({
   title,
   subtitle,
-  backgroundImageUrl = heroImage,
   ariaLabel = "Hero section",
 }: HeroSectionProps) {
   const headingId = "hero-heading"
@@ -24,7 +22,6 @@ export default function HeroSection({
       className={styles.hero}
       aria-label={ariaLabel}
       aria-labelledby={headingId}
-      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
       role="banner"
     >
       <div className={styles.overlay} aria-hidden="true" />
