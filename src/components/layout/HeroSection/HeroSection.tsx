@@ -1,6 +1,7 @@
 "use client"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
+import heroImage from "../../../assets/sate.png"
 
 export interface HeroSectionProps {
   title: string
@@ -12,7 +13,7 @@ export interface HeroSectionProps {
 export default function HeroSection({
   title,
   subtitle,
-  backgroundImageUrl = "/placeholder.jpg",
+  backgroundImageUrl = heroImage,
   ariaLabel = "Hero section",
 }: HeroSectionProps) {
   const headingId = "hero-heading"
@@ -32,10 +33,9 @@ export default function HeroSection({
             {title}
           </h1>
           {subtitle ? <p className={styles.subtitle}>{subtitle}</p> : null}
-        </div>
-        
-        <div className={styles.cta}>
-            <Button>See Menu</Button>
+          <div className={styles.cta}>
+            <Button className={styles.ctaButton}>About Us</Button>
+          </div>
         </div>
       </div>
     </section>

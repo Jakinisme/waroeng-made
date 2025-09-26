@@ -1,4 +1,4 @@
-/* New CSS Module styles for the HeroSection component */
+
 
 .hero {
   position: relative;
@@ -11,8 +11,8 @@
   background-size: cover;
   background-position: center center;
 
-  /* Spacing: mobile-first */
-  padding: 3rem 1.25rem;
+  /* Spacing: mobile-first; push content lower */
+  padding: 10rem 1.25rem 5rem;
   color: #ffffff;
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@
   /* Subtle overlay to ensure text contrast on busy images */
   position: absolute;
   inset: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(14, 73, 18);
 }
 
 .inner {
@@ -32,39 +32,56 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .content {
   width: 100%;
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   margin: 0;
-  color: #000000;
+  color: rgb(255, 255, 255);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
 
   /* Responsive, readable scale */
-  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.5rem);
+  font-size: clamp(2.5rem, 6vw + 0.5rem, 4.75rem);
   text-wrap: balance;
 }
 
 .subtitle {
   margin: 1rem auto 0;
   max-width: 60ch;
-  color: rgba(0, 0, 0, 0.92);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.6;
   font-weight: 400;
-  font-size: clamp(1rem, 1.2vw + 0.8rem, 1.25rem);
+  font-size: clamp(1.25rem, 2.5vw + 0.8rem, 1.75rem);
+}
+
+/* CTA alignment */
+.cta {
+  margin-top: 1.75rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  padding: 1.1rem 1.75rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
 }
 
 /* Larger screens: increase spacing */
 @media (min-width: 768px) {
   .hero {
-    padding: 5rem 2rem;
+    padding: 14rem 2rem 6rem;
     min-height: 75vh;
   }
 
@@ -73,8 +90,7 @@
   }
 
   .cta {
-    padding: 1rem 1.5rem;
-    font-size: 1.0625rem;
+    margin-top: 2rem;
   }
 }
 
