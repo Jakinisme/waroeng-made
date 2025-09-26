@@ -5,9 +5,16 @@ import { MenuIcon, CloverIcon as CloseIcon, Phone, MapPin, Clock, Leaf } from "l
 import  Button from "../../ui/Button"
 import styles from "./Menu.module.css"
 
-const MobileMenu = () => {
+const Menu = () => {
+  const linkItem = [
+    {href: "#menu", label: "Our Menu", description: "Explore dishes"},
+    {href: '#about', label: "About Us", description: "Our story"},
+    {href: '#gallery', label: "Gallery", description: "View photos"},
+    {href: '#contact', label: "Contact", description: "Get in touch"},
+  ]
+
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const mobileMenuRef = useRef<HTMLDivElement | null>(null)
+  const menuRef = useRef<HTMLDivElement | null>(null)
   const burgerRef = useRef<HTMLButtonElement | null>(null)
 
   const toggleMenu = () => {
@@ -18,7 +25,7 @@ const MobileMenu = () => {
     const handleGlobalPointerDown = (event: MouseEvent | TouchEvent) => {
       if (!isOpen) return
       const target = event.target as Node | null
-      const clickedInsideMenu = !!(mobileMenuRef.current && target && mobileMenuRef.current.contains(target))
+      const clickedInsideMenu = !!(menuRef.current && target && menuRef.current.contains(target))
       const clickedBurger = !!(burgerRef.current && target && burgerRef.current.contains(target))
       if (!clickedInsideMenu && !clickedBurger) {
         setIsOpen(false)
@@ -45,7 +52,7 @@ const MobileMenu = () => {
     <>
       <button
         ref={burgerRef}
-        aria-controls="mobile-menu"
+        aria-controls="menu"
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         className={styles.menuButton}
@@ -56,13 +63,27 @@ const MobileMenu = () => {
       </button>
 
       {isOpen && (
-        <div ref={mobileMenuRef} id="mobile-menu" className={styles.overlay} role="dialog" aria-modal="true">
-          <div className={styles.container}>
-            {/* Restaurant Info */}
+        <div className={styles.overlay} role="presentation">
+          <div
+            ref={menuRef}
+            id="mobile-menu"
+            className={styles.container}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Restaurant menu"
+          >
+            <button
+              type="button"
+              aria-label="Close menu"
+              className={styles.closeButton}
+              onClick={toggleMenu}
+            >
+              <CloseIcon size={20} aria-hidden />
+            </button>
             <div className={styles.restaurantInfo}>
               <div className={styles.restaurantHeader}>
                 <div className={styles.restaurantIcon}>
-                  <Leaf className="h-4 w-4 text-primary-foreground" />
+                  <Leaf className="h-4 w-4" />
                 </div>
                 <div>
                   <h3 className={styles.restaurantTitle}>Waroeng Made</h3>
@@ -86,27 +107,15 @@ const MobileMenu = () => {
               </div>
             </div>
 
-            {/* Navigation Links */}
             <nav className={styles.navigation} aria-label="Mobile navigation">
-              <a href="#menu" className={styles.navLink} onClick={toggleMenu}>
-                <span className={styles.navTitle}>Our Menu</span>
-                <span className={styles.navDescription}>Explore dishes</span>
-              </a>
-              <a href="#about" className={styles.navLink} onClick={toggleMenu}>
-                <span className={styles.navTitle}>About Us</span>
-                <span className={styles.navDescription}>Our story</span>
-              </a>
-              <a href="#gallery" className={styles.navLink} onClick={toggleMenu}>
-                <span className={styles.navTitle}>Gallery</span>
-                <span className={styles.navDescription}>View photos</span>
-              </a>
-              <a href="#contact" className={styles.navLink} onClick={toggleMenu}>
-                <span className={styles.navTitle}>Contact</span>
-                <span className={styles.navDescription}>Get in touch</span>
-              </a>
+              {linkItem.map((item, index) => (
+                <a href={item.href} key={index} className={styles.navLink} onClick={toggleMenu}>
+                  <span className={styles.navTitle}>{item.label}</span>
+                  <span className={styles.navDescription}>{item.description}</span>
+                </a>
+              ))}
             </nav>
 
-            {/* Action Buttons */}
             <div className={styles.actions}>
               <Button variant="outline" className="" onClick={toggleMenu}>
                 Order Online
@@ -125,4 +134,4 @@ const MobileMenu = () => {
   )
 }
 
-export default MobileMenu
+export default Menu

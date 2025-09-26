@@ -1,0 +1,117 @@
+/* Simple, responsive styles for the site header */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffffe1;
+}
+
+.topBar {
+  background: #111827; /* slate-900 */
+  color: #ffffff; /* gray-50 */
+  font-size: 12px;
+}
+
+.topBarContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 16px;
+}
+
+.topBarContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.95;
+}
+
+.mainContainer {
+  background: #ffffff00;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: #10b981; /* emerald-500 */
+  display: grid;
+  place-items: center;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.logoSubtitle {
+  font-size: 12px;
+  color: #6b7280; /* gray-500 */
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Optional: make outline button subtle for header */
+.orderButton {
+  border-color: #e5e7eb; /* gray-200 */
+}
+
+@media (min-width: 768px) {
+  .topBarContainer {
+    padding: 8px 20px;
+  }
+
+  .topBarContent {
+    justify-content: space-between;
+  }
+
+  .mainContent {
+    padding: 16px 20px;
+  }
+
+  .logoTitle {
+    font-size: 20px;
+  }
+
+  .logoSubtitle {
+    font-size: 13px;
+  }
+}
+
+

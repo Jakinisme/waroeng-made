@@ -1,4 +1,5 @@
 import type React from "react";
+import styles from "./Button.module.css";
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -6,13 +7,18 @@ interface ButtonProps {
     type?: "button" | "submit";
     className?: string;
     onClick?: () => void;
+    fullWidth?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-    const { children, className, type, onClick } = props;
+    const { children, className, type, onClick, variant = "primary", fullWidth } = props;
+
+    const classes = [styles.button, styles[variant], fullWidth ? styles.fullWidth : undefined, className]
+        .filter(Boolean)
+        .join(" ");
 
     return (
-        <button type={type ? type : "button"} className={className} onClick={onClick}>
+        <button type={type ? type : "button"} className={classes} onClick={onClick}>
             {children}
         </button>
     );

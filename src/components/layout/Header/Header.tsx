@@ -15,7 +15,7 @@ const Header = () => {
             </div>
             <div className={styles.topBarItem}>
               <MapPin className="h-4 w-4" />
-              <span>Ubud, Bali</span>
+              <span>Tuban, Jawa Timur</span>
             </div>
             <div className={styles.topBarItem}>
               <Clock className="h-4 w-4" />
@@ -27,7 +27,6 @@ const Header = () => {
 
       <div className={styles.mainContainer}>
         <div className={styles.mainContent}>
-          {/* Logo Section */}
           <a href="#home" className={styles.logo} aria-label="Waroeng Made - Authentic Balinese Restaurant">
             <div className={styles.logoIcon}>
               <Leaf className="h-5 w-5 text-primary-foreground" />
@@ -41,9 +40,6 @@ const Header = () => {
           <div className={styles.actions}>
             <Button variant="outline" className={styles.orderButton}>
               Order Online
-            </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              Reserve Table
             </Button>
 
             <Menu />
