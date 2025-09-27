@@ -5,7 +5,6 @@ import Button from "../../ui/Button"
 import styles from "./Info.module.css"
 
 import sateImage from '../../../assets/menu/sate.png'
-import crownImage from '../../../assets/static/crown.png'
 
 const Info = () => {
     const { ref, isIntersecting } = useInteractionObserver({
@@ -44,7 +43,7 @@ const Info = () => {
 
                 <div className={styles.menuCategory}>
                     <div className={styles.bestMenuContainer}>
-                        <img src={crownImage} alt="crown" className={styles.crownImage} />
+                        <img src='/crown.png' alt="crown" className={styles.crownImage} />
                         <span className={styles.bestMenuTitle}>Best Menu</span>
                         <div className={styles.bestItem}>
                             <img src={sateImage} alt="best food" />

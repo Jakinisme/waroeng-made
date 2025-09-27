@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { Phone, MapPin, Clock, Leaf } from "lucide-react"
 import Button from "../../ui/Button"
 import Menu from "../../ui/Menu"
-import crownImage from "../../../assets/static/crown.png"
 import styles from "./Header.module.css"
 
 const Header = () => {
@@ -37,7 +36,7 @@ const Header = () => {
               <div className={styles.logoTitleContainer}>
                 <span className={styles.logoTitle}>Waroeng </span>
                 <div className={styles.madeContainer}>
-                  <img src={crownImage} alt="Crown" className={styles.crown} />
+                  <img src='/crown.png' alt="Crown" className={styles.crown} />
                   <span className={styles.logoTitle}>Made</span>
                 </div>
               </div>

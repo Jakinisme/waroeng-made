@@ -5,9 +5,6 @@ import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
 
-import motifImage from "../../../assets/static/motif.png"
-import crownImage from "../../../assets/static/crown.png"
-
 export interface HeroSectionProps {
   title: string
   subtitle?: string
@@ -51,7 +48,7 @@ export default function HeroSection({
       <div
         className={styles.motif}
         aria-hidden="true"
-        style={{ backgroundImage: `url(${motifImage})` }}
+        style={{ backgroundImage: `url(/motif.png)` }}
       />
       <div className={styles.inner}>
         <div className={styles.content}>
@@ -60,7 +57,7 @@ export default function HeroSection({
               <>
                 <span>Waroeng </span>
                 <div className={styles.madeContainer}>
-                  <img src={crownImage} alt="Crown" className={styles.crown} />
+                  <img src='/crown.png' alt="Crown" className={styles.crown} />
                   <span>Made</span>
                 </div>
               </>
