@@ -1,0 +1,155 @@
+/* CSS Module for elegant, unique collage layout using theme tokens */
+
+.gallery {
+  --g-radius: var(--radius-xl);
+  --g-border: var(--color-border);
+  --g-fg: var(--color-foreground);
+  --g-bg: var(--color-card);
+  --g-muted: var(--color-muted);
+  --g-ring: var(--color-ring);
+
+  display: grid;
+  gap: 1.25rem; /* gap-5 */
+  padding: 2.5rem 1rem; /* py-10 px-4 */
+  background: var(--g-bg);
+  color: var(--g-fg);
+  border-radius: var(--g-radius);
+  border: 1px solid var(--g-border);
+  width: min(var(--container-max, 1200px), 100% - 3rem);
+  margin-inline: auto;
+}
+
+.gallery.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem; /* gap-3 */
+  align-items: start;
+}
+
+.eyebrow {
+  width: 3rem;
+  height: 0.25rem;
+  background: var(--color-primary);
+  border-radius: 9999px;
+}
+
+.titleWrap {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: clamp(1.25rem, 1.1rem + 1vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--color-muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  margin-top: 0.5rem;
+  gap: 0.75rem; /* tight inner gap for elegance */
+}
+
+/* Mobile: stacked cards with subtle radii and border */
+.item {
+  position: relative;
+  overflow: clip;
+  border-radius: calc(var(--g-radius) - 4px);
+  border: 1px solid var(--g-border);
+  background: var(--g-muted);
+  isolation: isolate;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.item:focus-within,
+.item:focus,
+.item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px oklch(0.85 0 0 / 0.3);
+  outline: none;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+}
+
+/* Unique collage layout on wider screens */
+@media (min-width: 768px) {
+  .grid {
+    /* 12 columns allow interesting spans without feeling cramped */
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 10rem; /* base row height for spanning */
+    gap: 0.75rem;
+  }
+
+  .image {
+    aspect-ratio: auto;
+  }
+
+  /* Mosaic slots (7) with named placement via line-based spans */
+  .slot1 {
+    /* Hero: wide (2 rows tall) left block */
+    grid-column: 1 / span 8;
+    grid-row: 1 / span 2;
+  }
+
+  .slot2 {
+    /* Right column, top */
+    grid-column: 9 / span 4;
+    grid-row: 1 / span 1;
+  }
+
+  .slot3 {
+    /* Right column, below */
+    grid-column: 9 / span 4;
+    grid-row: 2 / span 1;
+  }
+
+  .slot4 {
+    /* Row 3 trio, left */
+    grid-column: 1 / span 4;
+    grid-row: 3 / span 1;
+  }
+
+  .slot5 {
+    /* Row 3 trio, middle */
+    grid-column: 5 / span 4;
+    grid-row: 3 / span 1;
+  }
+
+  .slot6 {
+    /* Row 3 trio, right */
+    grid-column: 9 / span 4;
+    grid-row: 3 / span 1;
+  }
+
+  .slot7 {
+    /* Optional panoramic cap row */
+    grid-column: 1 / span 12;
+    grid-row: 4 / span 1;
+  }
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    transition: none;
+  }
+}

@@ -1,5 +1,9 @@
 import Info from "../../layout/Info";
 import Hero from "../../layout/Hero";
+import Gallery from "../../layout/Gallery";
+
+import image from '../../../const/image.json'
+
 import useInteractionObserver from "../../../hooks/useInteractionObserver";
 
 const Home = () => {
@@ -16,6 +20,11 @@ const Home = () => {
             subtitle="Authentic Balinese Cuisine"
             />
             <Info />
+            <Gallery
+            title="Our Gallery"
+            subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae nostrum quam animi, eligendi impedit expedita magnam vel porro ab consequatur tenetur, quia, error amet! Minus dicta libero rerum minima?"
+            images={image}
+            ></Gallery>
         </main>
     )
 }

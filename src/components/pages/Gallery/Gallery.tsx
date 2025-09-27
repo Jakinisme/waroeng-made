@@ -17,7 +17,7 @@ const Gallery = () => {
     //];
     return (
         <main ref={ref} className={isIntersecting ? 'visible' : ''}>
-            <section className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 py-16">
+            <section className=''>
                 <div>
                     halo
                 </div>

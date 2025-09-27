@@ -103,6 +103,8 @@
 }
 
 .logoTitle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
   color: #ffffff;
   font-weight: 700;
   font-size: 18px;
@@ -110,6 +112,7 @@
 }
 
 .logoSubtitle {
+  font-family: 'Times New Roman', Times, serif;
   font-size: 12px;
   color: #ffffff; /* gray-500 */
 }

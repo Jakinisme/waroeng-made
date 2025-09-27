@@ -80,7 +80,7 @@ export default function Hero({
           ) : null}
           <div className={styles.cta}>
             <Link to="/about">
-              <Button className={styles.ctaButton}>About Us</Button>
+              <Button variant="outline">About Us</Button>
             </Link>
           </div>
         </div>

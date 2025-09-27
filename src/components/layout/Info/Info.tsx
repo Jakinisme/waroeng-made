@@ -33,9 +33,9 @@ const Info = () => {
     }, [isIntersecting, isComplete, startDescriptionTyping])
 
     const menuItem = [
-        { title: 'Sate Lilit', description: 'Minced fish satay with Balinese spices', price: 'Rp. 15.000', picture: `${sateImage}` },
-        { title: 'Nasi Campur', description: 'Mixed rice with various Balinese side dishes', price: 'Rp. 20.000', picture: `${sateImage}` },
-        { title: 'Bebek Betutu', description: 'Slow-cooked duck with traditional spices', price: 'Rp. 25.000', picture: `${sateImage}` },
+        { title: 'Sate Lilit', description: 'Minced fish satay with Balinese spices', price: 'Rp. 25.000', picture: `${sateImage}` },
+        { title: 'Nasi Campur', description: 'Mixed rice with various Balinese side dishes', price: 'Rp. 15.000', picture: `${sateImage}` },
+        { title: 'Ayam Betutu', description: 'Slow-cooked chicken with traditional spices', price: 'Rp. 30.000', picture: `${sateImage}` },
     ]
     return (
         <section ref={ref} className={`${styles.info} ${isIntersecting ? styles.visible : ''}`}>
@@ -52,13 +52,13 @@ const Info = () => {
                         <span className={styles.bestMenuTitle}>Best Menu</span>
                         <div className={styles.bestItem}>
                             <img src={sateImage} alt="best food" />
-                            <span className={styles.bestItemTitle}>Sate Lilit</span>
-                            <span className={styles.bestItemDescription}>Minced fish satay with Balinese spices</span>
-                            <span className={styles.bestItemPrice}>Rp. 15.000</span>
+                            <span className={styles.bestItemTitle}>{menuItem[0].title}</span>
+                            <span className={styles.bestItemDescription}>{menuItem[0].description}</span>
+                            <span className={styles.bestItemPrice}>{menuItem[0].price}</span>
                         </div>
                     </div>
                     {menuItem.map((item, index) => (
-                        <div className={`${styles.container} ${isIntersecting ? styles.visible : ''}`} key={index}>
+                        <div className={styles.container} key={index}>
                             <div className={styles.menuItem}>
                                 <img src={item.picture} alt="this is menu.png" />
                                 <span className={styles.menuTitle}>{item.title}</span>
@@ -71,7 +71,7 @@ const Info = () => {
 
                 <div className={styles.infoCta}>
                     <Link to="/menu">
-                        <Button>See All Menu</Button>
+                        <Button className={styles.infoCtaButton}>See All Menu</Button>
                     </Link>
                 </div>
             </div>

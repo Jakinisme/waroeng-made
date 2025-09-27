@@ -13,10 +13,6 @@ interface UseIntersectionReturn {
   entry: IntersectionObserverEntry | null;
 }
 
-/**
- * Simpler intersection observer hook
- * Works consistently in dev & production
- */
 export function useIntersectionObserver(
   {
     threshold = 0,

@@ -14,7 +14,7 @@ const Header = () => {
           <div className={styles.topBarContent}>
             <div className={styles.topBarItem}>
               <Phone className="h-4 w-4" />
-              <span>Order: 0812-3456-789</span>
+              <span>Order: 0812-3556-9222</span>
             </div>
             <div className={styles.topBarItem}>
               <MapPin className="h-4 w-4" />

@@ -35,9 +35,9 @@
   position: absolute;
   inset: 0;
   background-color: rgb(14, 73, 18);
-  background: radial-gradient(circle at 20% 80%, rgba(9, 110, 16, 0.664) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 44, 3, 0.781) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(9, 43, 12, 0.411) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(0, 143, 10, 0.616) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(9, 114, 16, 0.781) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(9, 49, 13, 0.411) 0%, transparent 50%);
   z-index: 0;
 }
 
@@ -77,6 +77,8 @@
 
 .title {
   margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
   color: rgb(255, 255, 255);
   font-weight: 800;
   line-height: 1.1;
@@ -119,6 +121,7 @@
 }
 
 .subtitle {
+  font-family: 'Times New Roman', Times, serif;
   margin: 1.5rem auto 0;
   max-width: 70ch;
   color: rgba(255, 255, 255, 0.92);
