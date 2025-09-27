@@ -3,8 +3,8 @@ import { useEffect } from "react"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
-import motifImage from "../../../assets/motif.png"
-import crownImage from "../../../assets/crown.png"
+import motifImage from "../../../assets/static/motif.png"
+import crownImage from "../../../assets/static/crown.png"
 
 export interface HeroSectionProps {
   title: string

@@ -1,7 +1,7 @@
 import { Phone, MapPin, Clock, Leaf } from "lucide-react"
 import Button from "../../ui/Button"
 import Menu from "../../ui/Menu"
-import crownImage from "../../../assets/crown.png"
+import crownImage from "../../../assets/static/crown.png"
 import styles from "./header.module.css"
 
 const Header = () => {

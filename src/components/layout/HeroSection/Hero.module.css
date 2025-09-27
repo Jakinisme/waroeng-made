@@ -100,7 +100,7 @@
   width: clamp(32px, 6vw + 12px, 60px);
   height: clamp(32px, 6vw + 12px, 60px);
   position: absolute;
-  top: -20px;
+  top: -24px;
   left: 50%;
   transform: translateX(-50%);
   animation: crownFloat 3s ease-in-out infinite;

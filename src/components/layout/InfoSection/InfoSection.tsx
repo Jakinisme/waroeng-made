@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
 import Button from "../../ui/Button"
 import styles from "./Info.module.css"
@@ -24,6 +24,15 @@ const Info = () => {
         }
     }, [isIntersecting, isComplete, startDescriptionTyping])
 
+    // Prevent re-triggering animation for menu items
+    const [hasAnimated, setHasAnimated] = useState(false)
+    
+    useEffect(() => {
+        if (isIntersecting && !hasAnimated) {
+            setHasAnimated(true)
+        }
+    }, [isIntersecting, hasAnimated])
+
     const menuItem = [
         { title: 'Sate Lilit', description: 'Minced fish satay with Balinese spices', price: 'Rp. 15.000', picture: '/placeholder.jpg' },
         { title: 'Nasi Campur', description: 'Mixed rice with various Balinese side dishes', price: 'Rp. 20.000', picture: '/placeholder.jpg' },
@@ -39,8 +48,18 @@ const Info = () => {
                 </p>
 
                 <div className={styles.menuCategory}>
+                    <div className={styles.bestMenuContainer}>
+                        <img src="/src/assets/static/crown.png" alt="crown" className={styles.crownImage} />
+                        <span className={styles.bestMenuTitle}>Best Menu</span>
+                        <div className={styles.bestItem}>
+                            <img src="/src/assets/menu/sate.png" alt="best food" />
+                            <span className={styles.bestItemTitle}>Sate Lilit</span>
+                            <span className={styles.bestItemDescription}>Minced fish satay with Balinese spices</span>
+                            <span className={styles.bestItemPrice}>Rp. 15.000</span>
+                        </div>
+                    </div>
                     {menuItem.map((item, index) => (
-                        <div ref={ref} className={`${styles.container} ${isIntersecting ? styles.visible : ''}`} key={index}>
+                        <div ref={ref} className={`${styles.container} ${hasAnimated ? styles.visible : ''}`} key={index}>
                             <div className={styles.menuItem}>
                                 <img src={item.picture} alt="this is menu.png" />
                                 <span className={styles.menuTitle}>{item.title}</span>
