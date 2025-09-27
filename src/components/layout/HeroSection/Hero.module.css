@@ -43,12 +43,13 @@
 .inner {
   position: relative; /* above overlay */
   z-index: 2;
-  max-width: 72rem; /* ~1152px */
+  max-width: 80rem; /* ~1280px - increased for better centering */
   margin: 0 auto;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 2rem;
 }
 
 .motif {
@@ -80,13 +81,13 @@
   line-height: 1.1;
   letter-spacing: -0.01em;
 
-  /* Responsive, readable scale */
-  font-size: clamp(2.5rem, 6vw + 0.5rem, 4.75rem);
+  /* Responsive, readable scale - increased for bigger impact */
+  font-size: clamp(3.5rem, 8vw + 1rem, 7rem);
   text-wrap: balance;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .madeContainer {
@@ -97,10 +98,10 @@
 }
 
 .crown {
-  width: clamp(32px, 6vw + 12px, 60px);
-  height: clamp(32px, 6vw + 12px, 60px);
+  width: clamp(48px, 8vw + 16px, 80px);
+  height: clamp(48px, 8vw + 16px, 80px);
   position: absolute;
-  top: -24px;
+  top: -32px;
   left: 50%;
   transform: translateX(-50%);
   animation: crownFloat 3s ease-in-out infinite;
@@ -117,40 +118,45 @@
 }
 
 .subtitle {
-  margin: 1rem auto 0;
-  max-width: 60ch;
+  margin: 1.5rem auto 0;
+  max-width: 70ch;
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.6;
   font-weight: 400;
-  font-size: clamp(1.25rem, 2.5vw + 0.8rem, 1.75rem);
+  font-size: clamp(1.5rem, 3vw + 1rem, 2.25rem);
 }
 
 /* CTA alignment */
 .cta {
-  margin-top: 1.75rem;
+  margin-top: 2.5rem;
   display: inline-flex;
   justify-content: center;
 }
 
 .ctaButton {
-  padding: 1.1rem 1.75rem;
-  font-size: 1.2rem;
-  border-radius: 12px;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.4rem;
+  border-radius: 16px;
+  font-weight: 600;
 }
 
 /* Larger screens: increase spacing */
 @media (min-width: 768px) {
   .hero {
-    padding: 14rem 2rem 6rem;
+    padding: 16rem 2rem 8rem;
     min-height: 100svh;
   }
 
+  .inner {
+    padding: 0 3rem;
+  }
+
   .ctaWrap {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 
   .cta {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }
 
