@@ -1,4 +1,4 @@
-import { useInteractionObserver } from "../../../hooks";
+import useInteractionObserver from "../../../hooks/useInteractionObserver";
 
 const About = () => {
     const { ref, isIntersecting } = useInteractionObserver({

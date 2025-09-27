@@ -1,9 +1,12 @@
 "use client"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
+
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
-import { useInteractionObserver, useTypewriter } from "../../../hooks"
+
+import useInteractionObserver from "../../../hooks/useInteractionObserver"
+import useTypewriter from "../../../hooks/useTypewriter"
 
 import crown from '../../../assets/crown.png'
 import motif from '../../../assets/motif.png'
@@ -23,7 +26,8 @@ export default function Hero({
   const headingId = "hero-heading"
   const { ref, isIntersecting } = useInteractionObserver({
     threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -100px 0px',
+    triggerOnce: true
   })
 
   const { displayText: typewriterSubtitle, startTyping: startSubtitleTyping } = useTypewriter({

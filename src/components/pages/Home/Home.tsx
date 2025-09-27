@@ -1,6 +1,6 @@
 import Info from "../../layout/Info";
 import Hero from "../../layout/Hero";
-import { useInteractionObserver } from "../../../hooks";
+import useInteractionObserver from "../../../hooks/useInteractionObserver";
 
 const Home = () => {
     console.log('home loaded')

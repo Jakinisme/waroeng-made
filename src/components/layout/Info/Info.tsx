@@ -1,6 +1,9 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
-import { useInteractionObserver, useTypewriter } from "../../../hooks"
+
+import useInteractionObserver from "../../../hooks/useInteractionObserver"
+import useTypewriter from "../../../hooks/useTypewriter"
+
 import Button from "../../ui/Button"
 import styles from "./Info.module.css"
 
@@ -10,7 +13,8 @@ import sateImage from '../../../assets/sate.png'
 const Info = () => {
     const { ref, isIntersecting } = useInteractionObserver({
         threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -50px 0px',
+        triggerOnce: true
     })
 
     const descriptionText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae nostrum quam animi, eligendi impedit expedita magnam vel porro ab consequatur tenetur, quia, error amet! Minus dicta libero rerum minima?"

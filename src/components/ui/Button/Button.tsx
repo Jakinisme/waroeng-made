@@ -1,5 +1,5 @@
 import type React from "react";
-import { useInteractionObserver } from "../../../hooks";
+import useInteractionObserver from "../../../hooks/useInteractionObserver";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
@@ -15,7 +15,8 @@ const Button = (props: ButtonProps) => {
     const { children, className, type, onClick, variant = "primary", fullWidth } = props;
     const { ref, isIntersecting } = useInteractionObserver({
         threshold: 0.1,
-        rootMargin: '0px'
+        rootMargin: '0px',  
+        triggerOnce: true
     });
 
     const classes = [styles.button, styles[variant], fullWidth ? styles.fullWidth : undefined, isIntersecting ? styles.visible : '', className]
