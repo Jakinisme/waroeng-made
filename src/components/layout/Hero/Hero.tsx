@@ -5,18 +5,18 @@ import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
 
-export interface HeroSectionProps {
+export interface HeroProps {
   title: string
   subtitle?: string
   backgroundImageUrl?: string
   ariaLabel?: string
 }
 
-export default function HeroSection({
+export default function Hero({
   title,
   subtitle,
   ariaLabel = "Hero section",
-}: HeroSectionProps) {
+}: HeroProps) {
   const headingId = "hero-heading"
   const { ref, isIntersecting } = useInteractionObserver({
     threshold: 0.3,

@@ -1,8 +1,9 @@
-import Info from "../../layout/InfoSection";
-import Hero from "../../layout/HeroSection";
+import Info from "../../layout/Info";
+import Hero from "../../layout/Hero";
 import { useInteractionObserver } from "../../../hooks";
 
 const Home = () => {
+    console.log('home loaded')
     const { ref, isIntersecting } = useInteractionObserver({
         threshold: 0.1,
         rootMargin: '0px'

@@ -10,7 +10,6 @@ import '../styles/global.css'
 function App() {
   return (
     <Router>
-      <div>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +18,6 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </div>
     </Router>
   )
 }
