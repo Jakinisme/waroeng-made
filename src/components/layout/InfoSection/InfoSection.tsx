@@ -4,6 +4,9 @@ import { useInteractionObserver, useTypewriter } from "../../../hooks"
 import Button from "../../ui/Button"
 import styles from "./Info.module.css"
 
+import sateImage from '../../../assets/menu/sate.png'
+import crownImage from '../../../assets/static/crown.png'
+
 const Info = () => {
     const { ref, isIntersecting } = useInteractionObserver({
         threshold: 0.2,
@@ -41,10 +44,10 @@ const Info = () => {
 
                 <div className={styles.menuCategory}>
                     <div className={styles.bestMenuContainer}>
-                        <img src="/src/assets/static/crown.png" alt="crown" className={styles.crownImage} />
+                        <img src={crownImage} alt="crown" className={styles.crownImage} />
                         <span className={styles.bestMenuTitle}>Best Menu</span>
                         <div className={styles.bestItem}>
-                            <img src="/src/assets/menu/sate.png" alt="best food" />
+                            <img src={sateImage} alt="best food" />
                             <span className={styles.bestItemTitle}>Sate Lilit</span>
                             <span className={styles.bestItemDescription}>Minced fish satay with Balinese spices</span>
                             <span className={styles.bestItemPrice}>Rp. 15.000</span>

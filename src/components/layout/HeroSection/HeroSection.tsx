@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
+
 import motifImage from "../../../assets/static/motif.png"
 import crownImage from "../../../assets/static/crown.png"
 
