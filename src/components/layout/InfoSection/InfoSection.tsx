@@ -29,9 +29,9 @@ const Info = () => {
     }, [isIntersecting, isComplete, startDescriptionTyping])
 
     const menuItem = [
-        { title: 'Sate Lilit', description: 'Minced fish satay with Balinese spices', price: 'Rp. 15.000', picture: '/placeholder.jpg' },
-        { title: 'Nasi Campur', description: 'Mixed rice with various Balinese side dishes', price: 'Rp. 20.000', picture: '/placeholder.jpg' },
-        { title: 'Bebek Betutu', description: 'Slow-cooked duck with traditional spices', price: 'Rp. 25.000', picture: '/placeholder.jpg' },
+        { title: 'Sate Lilit', description: 'Minced fish satay with Balinese spices', price: 'Rp. 15.000', picture: `${sateImage}` },
+        { title: 'Nasi Campur', description: 'Mixed rice with various Balinese side dishes', price: 'Rp. 20.000', picture: `${sateImage}` },
+        { title: 'Bebek Betutu', description: 'Slow-cooked duck with traditional spices', price: 'Rp. 25.000', picture: `${sateImage}` },
     ]
     return (
         <section ref={ref} className={`${styles.info} ${isIntersecting ? styles.visible : ''}`}>

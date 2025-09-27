@@ -108,7 +108,7 @@ const Menu = () => {
               </div>
             </div>
 
-            <nav className={styles.navigation} aria-label="Mobile navigation">
+            <nav className={styles.navigation} aria-label="navigation">
               {linkItem.map((item, index) => (
                 <Link to={item.href} key={index} className={styles.navLink} onClick={toggleMenu}>
                   <span className={styles.navTitle}>{item.label}</span>
