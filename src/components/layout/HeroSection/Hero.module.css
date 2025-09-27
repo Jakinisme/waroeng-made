@@ -16,6 +16,16 @@
   padding: 10rem 1.25rem 5rem;
   color: #ffffff;
   box-sizing: border-box;
+  
+  /* Animation properties */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .overlay {
@@ -23,10 +33,10 @@
   position: absolute;
   inset: 0;
   background-color: rgb(14, 73, 18);
-  background: radial-gradient(circle at 20% 80%, rgba(15, 102, 21, 0.281) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(9, 68, 12, 0.288) 0%, transparent 50%),
+  background: radial-gradient(circle at 20% 80%, rgba(9, 110, 16, 0.664) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 44, 3, 0.781) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(9, 43, 12, 0.411) 0%, transparent 50%);
-    animation: backgroundShift 20s ease-in-out infinite;
+  animation: backgroundShift 20s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -110,6 +120,22 @@
 
   .cta {
     margin-top: 2rem;
+  }
+}
+
+/* Typewriter cursor animation */
+.cursor {
+  animation: blink 1s infinite;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
   }
 }
 

@@ -1,6 +1,8 @@
 "use client"
+import { useEffect } from "react"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
+import { useInteractionObserver, useTypewriter } from "../../../hooks"
 import motifImage from "../../../assets/motif.png"
 
 export interface HeroSectionProps {
@@ -16,10 +18,30 @@ export default function HeroSection({
   ariaLabel = "Hero section",
 }: HeroSectionProps) {
   const headingId = "hero-heading"
+  const { ref, isIntersecting } = useInteractionObserver({
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+  })
+
+  // Typewriter effect for subtitle (infinite)
+  const { displayText: typewriterSubtitle, startTyping: startSubtitleTyping } = useTypewriter({
+    text: subtitle || '',
+    speed: 100,
+    infinite: true,
+    delay: 1000, // Start typing 1 second after component mounts
+  })
+
+  // Start typewriter effect when component mounts
+  useEffect(() => {
+    if (subtitle) {
+      startSubtitleTyping()
+    }
+  }, [subtitle, startSubtitleTyping])
 
   return (
     <section
-      className={styles.hero}
+      ref={ref}
+      className={`${styles.hero} ${isIntersecting ? styles.visible : ''}`}
       aria-label={ariaLabel}
       aria-labelledby={headingId}
       role="banner"
@@ -35,7 +57,12 @@ export default function HeroSection({
           <h1 id={headingId} className={styles.title}>
             {title}
           </h1>
-          {subtitle ? <p className={styles.subtitle}>{subtitle}</p> : null}
+          {subtitle ? (
+            <p className={styles.subtitle}>
+              {typewriterSubtitle}
+              <span className={styles.cursor}>|</span>
+            </p>
+          ) : null}
           <div className={styles.cta}>
             <Button className={styles.ctaButton}>About Us</Button>
           </div>

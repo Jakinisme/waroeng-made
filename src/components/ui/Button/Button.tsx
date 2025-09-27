@@ -1,4 +1,5 @@
 import type React from "react";
+import { useInteractionObserver } from "../../../hooks";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
@@ -12,13 +13,17 @@ interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
     const { children, className, type, onClick, variant = "primary", fullWidth } = props;
+    const { ref, isIntersecting } = useInteractionObserver({
+        threshold: 0.1,
+        rootMargin: '0px'
+    });
 
-    const classes = [styles.button, styles[variant], fullWidth ? styles.fullWidth : undefined, className]
+    const classes = [styles.button, styles[variant], fullWidth ? styles.fullWidth : undefined, isIntersecting ? styles.visible : '', className]
         .filter(Boolean)
         .join(" ");
 
     return (
-        <button type={type ? type : "button"} className={classes} onClick={onClick}>
+        <button ref={ref} type={type ? type : "button"} className={classes} onClick={onClick}>
             {children}
         </button>
     );

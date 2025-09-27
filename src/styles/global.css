@@ -48,3 +48,15 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: inherit;
   font-size: inherit;
 }
+
+/* Global visibility states for useInteractionObserver */
+main {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+main.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
