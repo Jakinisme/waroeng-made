@@ -8,6 +8,7 @@ import Button from "../../ui/Button"
 import styles from "./Info.module.css"
 
 import crown from '../../../assets/crown.png'
+import motif from '../../../assets/motif.png'
 import sateImage from '../../../assets/sate.png'
 
 const Info = () => {
@@ -75,6 +76,12 @@ const Info = () => {
                     </Link>
                 </div>
             </div>
+
+            <div
+               className={styles.motif}
+               aria-hidden="true"
+               style={{ backgroundImage: `url(${motif})` }}
+             />
         </section>
     )
 }

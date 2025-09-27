@@ -1,0 +1,128 @@
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* kiri: gambar, kanan: teks */
+  align-items: start;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.aboutImage img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aboutTitle {
+  margin-bottom: 1rem;
+}
+
+.aboutTitleText {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.aboutSubtitle {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+.aboutDescription {
+  margin: 1rem 0 2rem;
+}
+
+.aboutDescriptionText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* selalu 2 kolom */
+  gap: 1.25rem 1rem; /* jarak antar item: vertical 1.25rem, horizontal 1rem */
+  margin-top: 1.5rem;
+}
+
+.aboutGridItem {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.aboutGridItem:hover {
+  transform: translateY(-5px);
+}
+
+.aboutGridImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; /* bikin bulat kayak di referensi */
+  object-fit: cover;
+}
+
+.slogan {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+
+/* ------------------- */
+/* MEDIA QUERIES       */
+/* ------------------- */
+@media (max-width: 1024px) {
+  .aboutContent {
+    grid-template-columns: 1fr; /* stack di tablet */
+    text-align: center;
+  }
+
+  .aboutGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .aboutTitleText {
+    font-size: 1.5rem;
+  }
+
+  .aboutDescriptionText {
+    font-size: 0.9rem;
+  }
+
+  .aboutGridImage {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutTitleText {
+    font-size: 1.3rem;
+  }
+
+  .slogan {
+    font-size: 0.8rem;
+  }
+}

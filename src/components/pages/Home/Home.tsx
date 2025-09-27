@@ -1,6 +1,7 @@
 import Info from "../../layout/Info";
 import Hero from "../../layout/Hero";
 import Gallery from "../../layout/Gallery";
+import About from "../../layout/About";
 
 import image from '../../../const/image.json'
 
@@ -19,6 +20,7 @@ const Home = () => {
             title="Waroeng Made"
             subtitle="Authentic Balinese Cuisine"
             />
+            <About />
             <Info />
             <Gallery
             title="Our Gallery"
