@@ -1,16 +1,17 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { MenuIcon, CloverIcon as CloseIcon, Phone, MapPin, Clock, Leaf } from "lucide-react"
 import  Button from "../../ui/Button"
 import styles from "./Menu.module.css"
 
 const Menu = () => {
   const linkItem = [
-    {href: "#menu", label: "Our Menu", description: "Explore dishes"},
-    {href: '#about', label: "About Us", description: "Our story"},
-    {href: '#gallery', label: "Gallery", description: "View photos"},
-    {href: '#contact', label: "Contact", description: "Get in touch"},
+    {href: "/menu", label: "Our Menu", description: "Explore dishes"},
+    {href: '/about', label: "About Us", description: "Our story"},
+    {href: '/gallery', label: "Gallery", description: "View photos"},
+    {href: '/contact', label: "Contact", description: "Get in touch"},
   ]
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -109,10 +110,10 @@ const Menu = () => {
 
             <nav className={styles.navigation} aria-label="Mobile navigation">
               {linkItem.map((item, index) => (
-                <a href={item.href} key={index} className={styles.navLink} onClick={toggleMenu}>
+                <Link to={item.href} key={index} className={styles.navLink} onClick={toggleMenu}>
                   <span className={styles.navTitle}>{item.label}</span>
                   <span className={styles.navDescription}>{item.description}</span>
-                </a>
+                </Link>
               ))}
             </nav>
 

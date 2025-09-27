@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { Link } from "react-router-dom"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
 import Button from "../../ui/Button"
 import styles from "./Info.module.css"
@@ -62,7 +63,9 @@ const Info = () => {
                 </div>
 
                 <div className={styles.infoCta}>
-                    <Button>See All Menu</Button>
+                    <Link to="/menu">
+                        <Button>See All Menu</Button>
+                    </Link>
                 </div>
             </div>
         </section>

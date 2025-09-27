@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Phone, MapPin, Clock, Leaf } from "lucide-react"
 import Button from "../../ui/Button"
 import Menu from "../../ui/Menu"
@@ -28,7 +29,7 @@ const Header = () => {
 
       <div className={styles.mainContainer}>
         <div className={styles.mainContent}>
-          <a href="#home" className={styles.logo} aria-label="Waroeng Made - Authentic Balinese Restaurant">
+          <Link to="/" className={styles.logo} aria-label="Waroeng Made - Authentic Balinese Restaurant">
             <div className={styles.logoIcon}>
               <Leaf className="h-5 w-5 text-primary-foreground" />
             </div>
@@ -42,7 +43,7 @@ const Header = () => {
               </div>
               <span className={styles.logoSubtitle}>Authentic Balinese Cuisine</span>
             </div>
-          </a>
+          </Link>
 
           <div className={styles.actions}>
             <Button variant="outline" className={styles.orderButton}>

@@ -1,5 +1,6 @@
 "use client"
 import { useEffect } from "react"
+import { Link } from "react-router-dom"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
@@ -73,7 +74,9 @@ export default function HeroSection({
             </p>
           ) : null}
           <div className={styles.cta}>
-            <Button className={styles.ctaButton}>About Us</Button>
+            <Link to="/about">
+              <Button className={styles.ctaButton}>About Us</Button>
+            </Link>
           </div>
         </div>
       </div>
