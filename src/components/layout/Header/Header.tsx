@@ -4,6 +4,8 @@ import Button from "../../ui/Button"
 import Menu from "../../ui/Menu"
 import styles from "./Header.module.css"
 
+import crown from '../../../assets/crown.png'
+
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -36,7 +38,7 @@ const Header = () => {
               <div className={styles.logoTitleContainer}>
                 <span className={styles.logoTitle}>Waroeng </span>
                 <div className={styles.madeContainer}>
-                  <img src='/crown.png' alt="Crown" className={styles.crown} />
+                  <img src={crown} alt="Crown" className={styles.crown} />
                   <span className={styles.logoTitle}>Made</span>
                 </div>
               </div>

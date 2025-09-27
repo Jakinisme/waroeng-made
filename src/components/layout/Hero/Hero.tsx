@@ -5,6 +5,9 @@ import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
 
+import crown from '../../../assets/crown.png'
+import motif from '../../../assets/motif.png'
+
 export interface HeroProps {
   title: string
   subtitle?: string
@@ -48,7 +51,7 @@ export default function Hero({
       <div
         className={styles.motif}
         aria-hidden="true"
-        style={{ backgroundImage: `url(/motif.png)` }}
+        style={{ backgroundImage: `url(${motif})` }}
       />
       <div className={styles.inner}>
         <div className={styles.content}>
@@ -57,7 +60,7 @@ export default function Hero({
               <>
                 <span>Waroeng </span>
                 <div className={styles.madeContainer}>
-                  <img src='/crown.png' alt="Crown" className={styles.crown} />
+                  <img src={crown} alt="Crown" className={styles.crown} />
                   <span>Made</span>
                 </div>
               </>

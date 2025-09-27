@@ -36,7 +36,6 @@
   background: radial-gradient(circle at 20% 80%, rgba(9, 110, 16, 0.664) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(0, 44, 3, 0.781) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(9, 43, 12, 0.411) 0%, transparent 50%);
-  animation: backgroundShift 20s ease-in-out infinite;
   z-index: 0;
 }
 
