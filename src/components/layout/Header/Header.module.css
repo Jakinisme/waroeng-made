@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffffe1;
+  background: rgba(255, 255, 255, 0);
 }
 
 .topBar {
@@ -59,7 +59,7 @@
   width: 32px;
   height: 32px;
   border-radius: 9999px;
-  background: #10b981; /* emerald-500 */
+  background: #029b1b; /* emerald-500 */
   display: grid;
   place-items: center;
 }
@@ -103,6 +103,7 @@
 }
 
 .logoTitle {
+  color: #000000;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.1;
@@ -110,7 +111,7 @@
 
 .logoSubtitle {
   font-size: 12px;
-  color: #6b7280; /* gray-500 */
+  color: #000000; /* gray-500 */
 }
 
 .actions {

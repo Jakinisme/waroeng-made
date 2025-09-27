@@ -5,6 +5,8 @@
   display: block;
   width: 100%;
   min-height: 100svh;
+  margin-top: -80px; 
+  padding-top: calc(10rem + 80px);
 
   /* Background image from inline style prop */
   background-repeat: no-repeat;
