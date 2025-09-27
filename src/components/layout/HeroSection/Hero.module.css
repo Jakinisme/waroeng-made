@@ -83,6 +83,37 @@
   /* Responsive, readable scale */
   font-size: clamp(2.5rem, 6vw + 0.5rem, 4.75rem);
   text-wrap: balance;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.madeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crown {
+  width: clamp(32px, 6vw + 12px, 60px);
+  height: clamp(32px, 6vw + 12px, 60px);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: crownFloat 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes crownFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
 }
 
 .subtitle {

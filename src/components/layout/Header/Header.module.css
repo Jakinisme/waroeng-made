@@ -69,6 +69,39 @@
   flex-direction: column;
 }
 
+.logoTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.madeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crown {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: crownFloat 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes crownFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-3px);
+  }
+}
+
 .logoTitle {
   font-weight: 700;
   font-size: 18px;
@@ -109,6 +142,12 @@
 
   .logoSubtitle {
     font-size: 13px;
+  }
+
+  .crown {
+    width: 24px;
+    height: 24px;
+    top: -14px;
   }
 }
 

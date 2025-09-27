@@ -4,6 +4,7 @@ import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 import { useInteractionObserver, useTypewriter } from "../../../hooks"
 import motifImage from "../../../assets/motif.png"
+import crownImage from "../../../assets/crown.png"
 
 export interface HeroSectionProps {
   title: string
@@ -23,15 +24,13 @@ export default function HeroSection({
     rootMargin: '0px 0px -100px 0px'
   })
 
-  // Typewriter effect for subtitle (infinite)
   const { displayText: typewriterSubtitle, startTyping: startSubtitleTyping } = useTypewriter({
     text: subtitle || '',
     speed: 100,
     infinite: true,
-    delay: 1000, // Start typing 1 second after component mounts
+    delay: 1000,
   })
 
-  // Start typewriter effect when component mounts
   useEffect(() => {
     if (subtitle) {
       startSubtitleTyping()
@@ -55,7 +54,17 @@ export default function HeroSection({
       <div className={styles.inner}>
         <div className={styles.content}>
           <h1 id={headingId} className={styles.title}>
-            {title}
+            {title === "Waroeng Made" ? (
+              <>
+                <span>Waroeng </span>
+                <div className={styles.madeContainer}>
+                  <img src={crownImage} alt="Crown" className={styles.crown} />
+                  <span>Made</span>
+                </div>
+              </>
+            ) : (
+              title
+            )}
           </h1>
           {subtitle ? (
             <p className={styles.subtitle}>

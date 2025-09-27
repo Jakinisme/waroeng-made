@@ -9,17 +9,15 @@ const Info = () => {
         rootMargin: '0px 0px -50px 0px'
     })
 
-    // Typewriter effect for description (one-time only when visible)
     const descriptionText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae nostrum quam animi, eligendi impedit expedita magnam vel porro ab consequatur tenetur, quia, error amet! Minus dicta libero rerum minima?"
     
     const { displayText: typewriterDescription, startTyping: startDescriptionTyping, isComplete } = useTypewriter({
         text: descriptionText,
         speed: 30,
         infinite: false,
-        delay: 500, // Start typing 0.5 seconds after becoming visible
+        delay: 500,
     })
 
-    // Start typewriter effect when section becomes visible
     useEffect(() => {
         if (isIntersecting && !isComplete) {
             startDescriptionTyping()
