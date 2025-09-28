@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import styles from "./Hero.module.css"
 import Button from "../../ui/Button"
 
-import useInteractionObserver from "../../../hooks/useInteractionObserver"
 import useTypewriter from "../../../hooks/useTypewriter"
 
 import crown from '../../../assets/crown.png'
@@ -24,11 +23,6 @@ export default function Hero({
   ariaLabel = "Hero section",
 }: HeroProps) {
   const headingId = "hero-heading"
-  const { ref, isIntersecting } = useInteractionObserver({
-    threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px',
-    triggerOnce: true
-  })
 
   const { displayText: typewriterSubtitle, startTyping: startSubtitleTyping } = useTypewriter({
     text: subtitle || '',
@@ -45,8 +39,7 @@ export default function Hero({
 
   return (
     <section
-      ref={ref}
-      className={`${styles.hero} ${isIntersecting ? styles.visible : ''}`}
+      className={styles.hero}
       aria-label={ariaLabel}
       aria-labelledby={headingId}
       role="banner"
@@ -80,7 +73,7 @@ export default function Hero({
           ) : null}
           <div className={styles.cta}>
             <Link to="/about">
-              <Button variant="outline">About Us</Button>
+              <Button variant="outline" className={styles.ctaButton}>About Us</Button>
             </Link>
           </div>
         </div>

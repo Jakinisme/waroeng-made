@@ -1,4 +1,5 @@
 import styles from "./Gallery.module.css"
+import sate2 from '../../../assets/sate2.webp'
 
 import Button from "../../ui/Button"
 
@@ -8,25 +9,47 @@ import useTypewriter from "../../../hooks/useTypewriter"
 import { Link } from "react-router-dom"
 import { useEffect } from "react"
 
-type GalleryImage = {
-  src: string
-  alt: string
-}
 
 type GallerySectionProps = {
   title?: string
   subtitle?: string
-  images: GalleryImage[]
   className?: string
 }
 
 const Gallery = ({
   title = "Gallery",
   subtitle = "A curated look",
-  images,
 }: GallerySectionProps) => {
-  const slots = Array.from({ length: 7 })
-    .map((_, i) => images[i])
+
+  const image = [
+    {
+        "src": `${sate2}`,
+        "alt": "1"
+    },
+    {
+        "src": `${sate2}`,
+        "alt": "2"
+    },
+    {
+        "src": `${sate2}`,
+        "alt": "3"
+    },
+    {
+        "src": `${sate2}`,
+        "alt": "4"
+    },
+    {
+        "src": `${sate2}`,
+        "alt": "5"
+    },
+    {
+        "src": `${sate2}`,
+        "alt": "6"
+    }
+]
+
+  const slots = Array.from({ length: 6 })
+    .map((_, i) => image[i])
     .filter(Boolean)
 
     const { ref, isIntersecting } = useIntersectionObserver({
@@ -62,16 +85,16 @@ const Gallery = ({
       </header>
 
       <div className={styles.grid} role="list">
-        {slots.map((img, idx) => (
-          <figure key={idx} role="listitem" className={`${styles.item} ${styles[`slot${idx + 1}`]}`}>
+        {slots.map((item, index) => (
+          <figure key={index} role="listitem" className={`${styles.item} ${styles[`slot${index + 1}`]}`}>
             <img
-              src={img.src || "/placeholder.svg"}
-              alt={img.alt}
+              src={item.src || "/placeholder.svg"}
+              alt={item.alt}
               loading="lazy"
               decoding="async"
               className={styles.image}
             />
-            <figcaption className="sr-only">{img.alt}</figcaption>
+            <figcaption className="sr-only">{item.alt}</figcaption>
           </figure>
         ))}
       </div>

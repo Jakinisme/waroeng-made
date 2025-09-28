@@ -1,5 +1,6 @@
 import styles from './About.module.css';
 import sate from '../../../assets/sate.png'
+import useIntersectionObserver from '../../../hooks/useInteractionObserver';
 
 const About = () => {
     const images = [
@@ -8,8 +9,15 @@ const About = () => {
         { src: `${sate}`, alt: 'Fresh Ingredients' , text: 'Freshness in Every Bite'},
         { src: `${sate}`, alt: 'Authentic Indonesian Cuisine', text: 'Authenticity You Can Trust'}
     ]
+
+    const { ref, isIntersecting } = useIntersectionObserver({
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px',
+            triggerOnce: true
+        })
+    
     return (
-        <section className={styles.about}>
+        <section className={`${styles.about} ${(isIntersecting ? styles.visible : '')}`} ref={ref} aria-label="About Us Section">
             <div className={styles.aboutContent}>
                 <div className={styles.aboutImage}>
                     <img src={sate} alt="About Us" />

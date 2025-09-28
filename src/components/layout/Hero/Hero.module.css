@@ -8,26 +8,14 @@
   margin-top: -80px; 
   padding-top: calc(10rem + 80px);
 
-  /* Background image from inline style prop */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-color: rgb(14, 73, 18);
 
-  /* Spacing: mobile-first; push content lower */
   padding: 10rem 1.25rem 5rem;
   color: #ffffff;
   box-sizing: border-box;
-  
-  /* Animation properties */
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.hero.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .overlay {
