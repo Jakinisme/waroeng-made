@@ -8,10 +8,10 @@ import styles from "./Menu.module.css"
 
 const Menu = () => {
   const linkItem = [
-    {href: "/menu", label: "Our Menu", description: "Explore dishes"},
-    {href: '/about', label: "About Us", description: "Our story"},
-    {href: '/gallery', label: "Gallery", description: "View photos"},
-    {href: '/contact', label: "Contact", description: "Get in touch"},
+    {href: "/menu", label: "Menu Kami", description: "Explore Menu"},
+    {href: '/about', label: "Tentang Kami", description: "Cerita Kami"},
+    {href: '/gallery', label: "Gallery", description: "Lihat Foto"},
+    {href: '/contact', label: "Kontak", description: "Get in touch"},
   ]
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -95,7 +95,7 @@ const Menu = () => {
               <div className={styles.restaurantDetails}>
                 <div className={styles.detailItem}>
                   <Phone className="h-4 w-4" />
-                  <span>0812-3456-789</span>
+                  <span>0812-3556-9222</span>
                 </div>
                 <div className={styles.detailItem}>
                   <MapPin className="h-4 w-4" />
@@ -103,7 +103,7 @@ const Menu = () => {
                 </div>
                 <div className={styles.detailItem}>
                   <Clock className="h-4 w-4" />
-                  <span>Open Daily 8AM - 10PM</span>
+                  <span>Open Daily 06:00 - 06:00</span>
                 </div>
               </div>
             </div>
@@ -120,12 +120,6 @@ const Menu = () => {
             <div className={styles.actions}>
               <Button variant="outline" className="" onClick={toggleMenu}>
                 Order Online
-              </Button>
-              <Button
-                className=""
-                onClick={toggleMenu}
-              >
-                Reserve Table
               </Button>
             </div>
           </div>

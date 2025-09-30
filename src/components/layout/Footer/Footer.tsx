@@ -1,6 +1,8 @@
 import styles from './Footer.module.css'
 
-const footer = () => {
+import useIntersectionObserver from "../../../hooks/useInteractionObserver"
+
+const Footer = () => {
     const widget = [
         { title: 'Waroeng Made', about: 'Waroeng Made menghadirkan cita rasa autentik Bali dalam suasana hangat dan bersahabat. Nikmati hidangan khas Pulau Dewata dari ayam betutu yang gurih hingga sambal pedas penuh rasa semua diolah dengan cinta untuk pengalaman bersantap yang tak terlupakan.', isAbout: true},
         { title: 'Jam Buka', about: 'Senin - Sabtu', isHours: true },
@@ -14,8 +16,15 @@ const footer = () => {
         { day: 'Jumat', time: '6:00 - 11:00' },
         { day: 'Sabtu', time: '6:00 - 11:00' },
     ]
+
+    const { ref, isIntersecting } = useIntersectionObserver({
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px',
+                triggerOnce: true
+            })
+
     return (
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} ${(isIntersecting ? styles.visible : '')}`} ref={ref}>
             <div className={styles.container}>
               {widget.map((item, index) => (
                <div className={styles.content} key={index}>
@@ -45,4 +54,4 @@ const footer = () => {
     )
 }
 
-export default footer;
+export default Footer;

@@ -20,8 +20,8 @@ const Home = () => {
             <About />
             <Info />
             <Gallery
-            title="Our Gallery"
-            subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae nostrum quam animi, eligendi impedit expedita magnam vel porro ab consequatur tenetur, quia, error amet! Minus dicta libero rerum minima?"
+            title="Gallery"
+            subtitle="A glimpse into our culinary creations"
             ></Gallery>
         </main>
     )

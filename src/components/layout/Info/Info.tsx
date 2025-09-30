@@ -31,7 +31,7 @@ const Info = () => {
             startDescriptionTyping()
         }
     }, [isIntersecting, isComplete, startDescriptionTyping])
-
+    
     const menuItem = [
         { title: 'Sate Lilit', description: 'Minced fish satay with Balinese spices', price: 'Rp. 25.000', picture: `${sateImage}` },
         { title: 'Nasi Campur', description: 'Mixed rice with various Balinese side dishes', price: 'Rp. 15.000', picture: `${sateImage}` },
@@ -40,7 +40,7 @@ const Info = () => {
     return (
         <section ref={ref} className={`${styles.info} ${isIntersecting ? styles.visible : ''}`}>
             <div className={styles.infoContent}>
-                <span className={styles.infoTitle}>Our Menu</span>
+                <span className={styles.infoTitle}>Menu Kami</span>
                 <p className={styles.infoDescription}>
                     {typewriterDescription}
                     {!isComplete && <span className={styles.cursor}>|</span>}

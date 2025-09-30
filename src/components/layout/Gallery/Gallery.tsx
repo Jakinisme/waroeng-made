@@ -18,7 +18,7 @@ type GallerySectionProps = {
 
 const Gallery = ({
   title = "Gallery",
-  subtitle = "A curated look",
+  subtitle = "",
 }: GallerySectionProps) => {
 
   const image = [
