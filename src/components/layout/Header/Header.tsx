@@ -13,16 +13,16 @@ const Header = () => {
         <div className={styles.topBarContainer}>
           <div className={styles.topBarContent}>
             <div className={styles.topBarItem}>
-              <Phone className="h-4 w-4" />
+              <Phone />
               <span>Order: 0812-3556-9222</span>
             </div>
             <div className={styles.topBarItem}>
-              <MapPin className="h-4 w-4" />
+              <MapPin />
               <span>Tuban, Jawa Timur</span>
             </div>
             <div className={styles.topBarItem}>
-              <Clock className="h-4 w-4" />
-              <span>Open Daily 8AM - 10PM</span>
+              <Clock />
+              <span>06:00 - 11:00</span>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ const Header = () => {
 
           <div className={styles.actions}>
             <Button variant="outline" className={styles.orderButton}>
-              Order Online
+              Order Gojek
             </Button>
 
             <Menu />

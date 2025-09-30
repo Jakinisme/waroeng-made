@@ -4,10 +4,10 @@ import useIntersectionObserver from '../../../hooks/useInteractionObserver';
 
 const About = () => {
     const images = [
-        { src: `${sate}`, alt: 'Traditional Indonesian Dish', text: 'Taste the Tradition' },
-        { src: `${sate}`, alt: 'Cozy Dining Area' , text: 'Feel at Home'},
-        { src: `${sate}`, alt: 'Fresh Ingredients' , text: 'Freshness in Every Bite'},
-        { src: `${sate}`, alt: 'Authentic Indonesian Cuisine', text: 'Authenticity You Can Trust'}
+        { src: `${sate}`, alt: 'Traditional Indonesian Dish', text: 'Rasakan Tradisi' },
+        { src: `${sate}`, alt: 'Cozy Dining Area' , text: 'Nyaman Seperti di Rumah'},
+        { src: `${sate}`, alt: 'Fresh Ingredients' , text: 'Segar di Setiap Gigitan'},
+        { src: `${sate}`, alt: 'Authentic Indonesian Cuisine', text: 'Keaslian yang Terpercaya'}
     ]
 
     const { ref, isIntersecting } = useIntersectionObserver({
@@ -25,13 +25,13 @@ const About = () => {
 
                 <div className={styles.aboutText}>
                     <div className={styles.aboutTitle}>
-                       <h2 className={styles.aboutTitleText}>About Us</h2>
+                       <h2 className={styles.aboutTitleText}>Tentang Kami</h2>
                        <span className={styles.aboutSubtitle}>Waroeng Made</span>
                     </div>
 
                     <div className={styles.aboutDescription}>
                       <p className={styles.aboutDescriptionText}>
-                        Waroeng Made is a beloved culinary destination that has been serving authentic Indonesian cuisine since its inception. Known for its warm ambiance and traditional flavors, Waroeng Made offers a diverse menu that showcases the rich heritage of Indonesian cooking. From savory ayam betutu to spicy sambal, each dish is crafted with care and passion, ensuring a memorable dining experience for all who visit.
+                        Waroeng Made menghadirkan cita rasa autentik Bali dalam suasana hangat dan bersahabat. Nikmati hidangan khas Pulau Dewata dari ayam betutu yang gurih hingga sambal pedas penuh rasa semua diolah dengan cinta untuk pengalaman bersantap yang tak terlupakan.
                       </p>
                     </div>
 

@@ -42,6 +42,7 @@
 }
 
 .motif {
+  background-image: url('../../../assets/motif.png');
   position: absolute;
   left: 0;
   right: 0;

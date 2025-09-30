@@ -129,6 +129,37 @@
   }
 }
 
+/* Mobile friendly gallery layout */
+@media (max-width: 576px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* jadi 2 kolom */
+    gap: 0.5rem;
+  }
+
+  .item {
+    border-radius: 6px;
+  }
+
+  .image {
+    aspect-ratio: 1 / 1; /* bikin kotak biar seragam */
+    object-fit: cover;
+  }
+}
+
+/* Tablet kecil (portrait) */
+@media (min-width: 577px) and (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* tablet enak 3 kolom */
+    gap: 0.75rem;
+  }
+
+  .image {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+
 /* Prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .item {

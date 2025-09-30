@@ -101,7 +101,7 @@ const Gallery = ({
 
       <div className={styles.cta}>
         <Link to={"/gallery"}>
-          <Button>See more</Button>
+          <Button>Lihat lebih banyak</Button>
         </Link>
       </div>
     </section>

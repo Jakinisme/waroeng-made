@@ -8,7 +8,6 @@ import Button from "../../ui/Button"
 import useTypewriter from "../../../hooks/useTypewriter"
 
 import crown from '../../../assets/crown.png'
-import motif from '../../../assets/motif.png'
 
 export interface HeroProps {
   title: string
@@ -48,7 +47,6 @@ export default function Hero({
       <div
         className={styles.motif}
         aria-hidden="true"
-        style={{ backgroundImage: `url(${motif})` }}
       />
       <div className={styles.inner}>
         <div className={styles.content}>
@@ -73,7 +71,7 @@ export default function Hero({
           ) : null}
           <div className={styles.cta}>
             <Link to="/about">
-              <Button variant="outline" className={styles.ctaButton}>About Us</Button>
+              <Button variant="outline" className={styles.ctaButton}>Tentang Kami</Button>
             </Link>
           </div>
         </div>
