@@ -16,13 +16,17 @@ const Home = () => {
             <Hero 
             title="Waroeng Made"
             subtitle="Authentic Balinese Cuisine"
+            isButton={true}
             />
             <About />
-            <Info />
+            <Info
+            title="Menu Kami"
+            descriptionText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
             <Gallery
             title="Gallery"
             subtitle="A glimpse into our culinary creations"
-            ></Gallery>
+            />
         </main>
     )
 }

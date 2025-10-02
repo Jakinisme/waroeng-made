@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { MenuIcon, CloverIcon as CloseIcon, Phone, MapPin, Clock, Leaf } from "lucide-react"
-import  Button from "../../ui/Button"
+
 import styles from "./Menu.module.css"
 
 const Menu = () => {
@@ -11,7 +11,7 @@ const Menu = () => {
     {href: "/menu", label: "Menu Kami", description: "Explore Menu"},
     {href: '/about', label: "Tentang Kami", description: "Cerita Kami"},
     {href: '/gallery', label: "Gallery", description: "Lihat Foto"},
-    {href: '/contact', label: "Kontak", description: "Get in touch"},
+    {href: '/contact', label: "Kontak", description: "Kontak Kami"},
   ]
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -116,12 +116,6 @@ const Menu = () => {
                 </Link>
               ))}
             </nav>
-
-            <div className={styles.actions}>
-              <Button variant="outline" className="" onClick={toggleMenu}>
-                Order Online
-              </Button>
-            </div>
           </div>
         </div>
       )}

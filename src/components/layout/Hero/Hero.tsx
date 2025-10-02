@@ -12,6 +12,7 @@ import crown from '../../../assets/crown.png'
 export interface HeroProps {
   title: string
   subtitle?: string
+  isButton?: boolean
   backgroundImageUrl?: string
   ariaLabel?: string
 }
@@ -19,6 +20,7 @@ export interface HeroProps {
 export default function Hero({
   title,
   subtitle,
+  isButton,
   ariaLabel = "Hero section",
 }: HeroProps) {
   const headingId = "hero-heading"
@@ -63,6 +65,7 @@ export default function Hero({
               title
             )}
           </h1>
+          
           {subtitle ? (
             <p className={styles.subtitle}>
               {typewriterSubtitle}
@@ -70,9 +73,12 @@ export default function Hero({
             </p>
           ) : null}
           <div className={styles.cta}>
+
+            {isButton && (
             <Link to="/about">
               <Button variant="outline" className={styles.ctaButton}>Tentang Kami</Button>
             </Link>
+            )}
           </div>
         </div>
       </div>

@@ -10,17 +10,22 @@ import styles from "./Info.module.css"
 import crown from '../../../assets/crown.png'
 import sateImage from '../../../assets/sate.png'
 
-const Info = () => {
+interface descriptionProps {
+    title: string
+    descriptionText?: string
+}
+
+const Info = (props: descriptionProps) => {
+    const { title, descriptionText } = props
+
     const { ref, isIntersecting } = useInteractionObserver({
         threshold: 0.2,
         rootMargin: '0px 0px -50px 0px',
         triggerOnce: true
     })
-
-    const descriptionText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae nostrum quam animi, eligendi impedit expedita magnam vel porro ab consequatur tenetur, quia, error amet! Minus dicta libero rerum minima?"
     
     const { displayText: typewriterDescription, startTyping: startDescriptionTyping, isComplete } = useTypewriter({
-        text: descriptionText,
+        text: descriptionText || '',
         speed: 30,
         infinite: false,
         delay: 500,
@@ -40,7 +45,7 @@ const Info = () => {
     return (
         <section ref={ref} className={`${styles.info} ${isIntersecting ? styles.visible : ''}`}>
             <div className={styles.infoContent}>
-                <span className={styles.infoTitle}>Menu Kami</span>
+                <span className={styles.infoTitle}>{title}</span>
                 <p className={styles.infoDescription}>
                     {typewriterDescription}
                     {!isComplete && <span className={styles.cursor}>|</span>}
@@ -51,7 +56,7 @@ const Info = () => {
                         <img src={crown} alt="crown" className={styles.crownImage} />
                         <span className={styles.bestMenuTitle}>Best Menu</span>
                         <div className={styles.bestItem}>
-                            <img src={sateImage} alt="best food" />
+                            <img src={sateImage} alt="best food"/>
                             <span className={styles.bestItemTitle}>{menuItem[0].title}</span>
                             <span className={styles.bestItemDescription}>{menuItem[0].description}</span>
                             <span className={styles.bestItemPrice}>{menuItem[0].price}</span>

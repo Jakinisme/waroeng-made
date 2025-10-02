@@ -1,52 +1,43 @@
 import useInteractionObserver from "../../../hooks/useInteractionObserver";
+import Hero from "../../layout/Hero";
+import styles from './Menu.module.css'
 
 const Menu = () => {
+    const menu = [
+        {title: 'Nasi Ayam Betutu', description: 'Ayam betutu dengan nasi hangat', price: 'Rp. 30.000', picture: ''},
+        {title: 'Sate Lilit', description: 'Sate lilit ikan dengan bumbu khas Bali', price: 'Rp. 25.000', picture: ''},
+        {title: 'Nasi Campur', description: 'Nasi campur dengan berbagai lauk pauk Bali', price: 'Rp. 15.000', picture: ''},
+    ]
+    
+    for (let i = 0; i < 12; i++) {
+        menu.push(...menu)
+        if (menu.length >= 12) break;
+    }
     const { ref, isIntersecting } = useInteractionObserver({
         threshold: 0.1,
         rootMargin: '0px'
     });
 
-  // const menuItems = [
-  //     {
-  //         category: "Appetizers",
-  //         items: [
-  //             { name: "Gado-Gado", description: "Fresh vegetables with peanut sauce", price: "25,000" },
-  //             { name: "Lumpia Semarang", description: "Crispy spring rolls with sweet sauce", price: "20,000" },
-  //             { name: "Sate Ayam", description: "Grilled chicken skewers with peanut sauce", price: "30,000" }
-  //         ]
-  //     },
-  //     {
-  //         category: "Main Courses",
-  //         items: [
-  //             { name: "Nasi Goreng", description: "Traditional Indonesian fried rice", price: "35,000" },
-  //             { name: "Rendang", description: "Slow-cooked beef in coconut curry", price: "45,000" },
-  //             { name: "Ayam Betutu", description: "Balinese spiced chicken", price: "40,000" },
-  //             { name: "Bebek Betutu", description: "Slow-cooked duck with Balinese spices", price: "50,000" }
-  //         ]
-  //     },
-  //     {
-  //         category: "Vegetarian",
-  //         items: [
-  //             { name: "Tempe Mendoan", description: "Crispy tempeh with sweet soy sauce", price: "25,000" },
-  //             { name: "Sayur Lodeh", description: "Coconut vegetable curry", price: "30,000" },
-  //             { name: "Tahu Telur", description: "Tofu and egg with sweet sauce", price: "28,000" }
-  //         ]
-  //     },
-  //     {
-  //         category: "Desserts",
-  //         items: [
-  //             { name: "Klepon", description: "Sweet rice balls with palm sugar", price: "15,000" },
-  //             { name: "Es Campur", description: "Mixed ice dessert with fruits", price: "20,000" },
-  //             { name: "Pisang Goreng", description: "Fried banana with honey", price: "18,000" }
-  //         ]
-  //     }
-  // ];
-
     return (
         <main ref={ref} className={isIntersecting ? 'visible' : ''}>
-            <section className=''>
-                <div>
-                    alaszwo
+            <Hero 
+            title="Menu Kami"
+            subtitle="Jelajahi Cita Rasa Autentik Bali"
+            isButton={false}
+            />
+
+            <section className={styles.content}>
+                <div className={styles.menuContent}>
+                    {menu.map((item, index) => (
+                        <div className={styles.menuContainer} key={index}>
+                            <div className={styles.menuItem}>
+                                <img src={item.picture || '/placeholder.png'} alt="menu.png" />
+                                <span className={styles.menuTitle}>{item.title}</span>
+                                <span className={styles.menuDescription}>{item.description}</span>
+                                <span className={styles.menuPrice}>{item.price}</span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </main>
